@@ -89,7 +89,10 @@ class RTCMetadata:
             return start, mid, end
 
         self.metadata, self.bbox, self.geometry = _load_metadata_from_asset()
-        self.grd_ids = _get_provenance()
+        try:
+            self.grd_ids = _get_provenance():
+        except Exception:
+            pass
         self.start_datetime, self.datetime, self.end_datetime = _get_times()
 
     @property
